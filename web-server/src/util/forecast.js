@@ -14,7 +14,7 @@ const forecast = (longitude, latitude, callback)=>{
     }
     else{
             callback(undefined, 
-                    response.body.daily.data[0].summary + 'It is currently' +response.body.currently.temperature);
+                response.body.daily.data[0].summary + ' It is currently ' +response.body.currently.temperature + ' degree Celsius.');
     }
     
     })

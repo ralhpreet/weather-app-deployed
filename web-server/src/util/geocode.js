@@ -10,8 +10,8 @@ const geoCode = (placeName, callback) =>{
                     callback("Unable to connect", undefined);
             }
     
-            else if(response.body.error){
-                    callback(response.body.error, undefined);    
+            else if(!response.body.features[0]){
+                    callback("Unable to find location", undefined);    
             }
             else{
                 const data = {
