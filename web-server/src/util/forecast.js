@@ -13,8 +13,10 @@ const forecast = (longitude, latitude, callback)=>{
             callback(response.body.error, undefined);    
     }
     else{
+           // console.log(response.body.daily.data[0])
             callback(undefined, 
-                response.body.daily.data[0].summary + ' It is currently ' +response.body.currently.temperature + ' degree Celsius.');
+                response.body.daily.data[0].summary + ' It is currently ' +response.body.currently.temperature + ' degree Celsius. ' +
+                 'Min Temp:'+ response.body.daily.data[0].temperatureMin + ' degree Celsius. '+ ' Max Temp: ' + response.body.daily.data[0].temperatureMax + ' degree Celsius. ');
     }
     
     })
